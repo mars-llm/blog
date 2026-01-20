@@ -1,11 +1,18 @@
 # Build output (generated in CI)
 dist/
 
-# Post template (local use only)
-content/posts/_template.md
+# Python
+.venv/
+__pycache__/
+*.pyc
 
-# Local guide
+# OS
+.DS_Store
+
+# Local only
+content/posts/_template.md
 MARS.md
+.claude/
 
 # Python
 .venv/
