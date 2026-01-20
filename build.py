@@ -207,6 +207,12 @@ def render_site(cfg: Dict[str, Any], posts: List[Post]) -> None:
         out = tmpl.render(**ctx_base, post=p)
         write_text(DIST / "posts" / p.slug / "index.html", out)
 
+    # RSS Feed
+    tmpl = env.get_template("feed.xml")
+    build_date = dt.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S +0000')
+    out = tmpl.render(**ctx_base, posts=posts[:20], build_date=build_date)
+    write_text(DIST / "feed.xml", out)
+
 
 def main() -> None:
     cfg = load_config()

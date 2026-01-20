@@ -7,23 +7,53 @@
   <meta name="description" content="{{ description }}" />
   <meta name="author" content="{{ site.author }}" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Facebook / LinkedIn / Reddit -->
   <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
   <meta property="og:title" content="{{ title }} | {{ site.title }}" />
   <meta property="og:description" content="{{ description }}" />
   <meta property="og:url" content="https://mars-llm.github.io{{ url(canonical_url | default('/')) }}" />
-  <meta property="og:image" content="https://mars-llm.github.io{{ url('/' + (og_image | default(theme.images.hero))) }}" />
+  <meta property="og:image" content="https://mars-llm.github.io{{ url('/' + (og_image | default(theme.images.social | default(theme.images.hero)))) }}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ title }} | {{ site.title }}" />
   <meta name="twitter:description" content="{{ description }}" />
-  <meta name="twitter:image" content="https://mars-llm.github.io{{ url('/' + (og_image | default(theme.images.hero))) }}" />
+  <meta name="twitter:image" content="https://mars-llm.github.io{{ url('/' + (og_image | default(theme.images.social | default(theme.images.hero)))) }}" />
+
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="https://mars-llm.github.io{{ url('/feed.xml') }}" />
 
   <link rel="canonical" href="https://mars-llm.github.io{{ url(canonical_url | default('/')) }}" />
   <link rel="icon" href="{{ url('/' + theme.images.favicon) }}" />
   <link rel="stylesheet" href="{{ url('/assets/css/main.css') }}" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "{% block schema_type %}WebSite{% endblock %}",
+    "name": "{{ site.title }}",
+    "description": "{{ description }}",
+    "url": "https://mars-llm.github.io{{ url('/') }}",
+    "author": {
+      "@type": "Organization",
+      "name": "{{ site.author }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://mars-llm.github.io{{ url('/' + theme.images.logo) }}"
+      }
+    }
+    {% block schema_extra %}{% endblock %}
+  }
+  </script>
 
   <style>
     :root{
@@ -66,7 +96,7 @@
 
   <footer class="footer">
     <div class="container">
-      <div class="tiny">© {{ now() }} · {{ site.title }}</div>
+      <div class="tiny">© {{ now() }} · {{ site.title }} · <a href="{{ url('/feed.xml') }}" style="color: var(--muted);">RSS</a></div>
     </div>
   </footer>
 </body>

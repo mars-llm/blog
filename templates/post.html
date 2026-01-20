@@ -2,9 +2,22 @@
 {% set title = post.title %}
 {% set description = post.excerpt %}
 {% set canonical_url = post.url %}
-{% set og_image = post.hero if post.hero else theme.images.hero %}
+{% set og_image = post.hero if post.hero else theme.images.social if theme.images.social else theme.images.hero %}
 
 {% block og_type %}article{% endblock %}
+{% block schema_type %}Article{% endblock %}
+
+{% block schema_extra %}
+,"headline": "{{ post.title }}",
+"datePublished": "{{ post.date.isoformat() }}",
+"dateModified": "{{ post.date.isoformat() }}",
+"mainEntityOfPage": {
+  "@type": "WebPage",
+  "@id": "https://mars-llm.github.io{{ url(post.url) }}"
+},
+"image": "https://mars-llm.github.io{{ url('/' + (post.hero if post.hero else theme.images.social if theme.images.social else theme.images.hero)) }}",
+"keywords": "{{ post.tags | join(', ') }}"
+{% endblock %}
 
 {% block content %}
   <article class="post">

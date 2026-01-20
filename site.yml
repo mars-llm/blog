@@ -23,6 +23,7 @@ theme:
     neon_yellow: "#FFD54A"
   images:
     hero: "assets/img/hero-akiba.png"
+    social: "assets/img/social.png"
     tile: "assets/img/tile.png"
     logo: "assets/img/logo.png"
     favicon: "assets/img/favicon.png"
