@@ -5,7 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{{ title }} | {{ site.title }}</title>
   <meta name="description" content="{{ description }}" />
+  <meta name="author" content="{{ site.author }}" />
 
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="{% block og_type %}website{% endblock %}" />
+  <meta property="og:title" content="{{ title }} | {{ site.title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="https://mars-llm.github.io{{ url(canonical_url | default('/')) }}" />
+  <meta property="og:image" content="https://mars-llm.github.io{{ url('/' + (og_image | default(theme.images.hero))) }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }} | {{ site.title }}" />
+  <meta name="twitter:description" content="{{ description }}" />
+  <meta name="twitter:image" content="https://mars-llm.github.io{{ url('/' + (og_image | default(theme.images.hero))) }}" />
+
+  <link rel="canonical" href="https://mars-llm.github.io{{ url(canonical_url | default('/')) }}" />
   <link rel="icon" href="{{ url('/' + theme.images.favicon) }}" />
   <link rel="stylesheet" href="{{ url('/assets/css/main.css') }}" />
 
@@ -30,7 +46,7 @@
           <img class="logo" src="{{ url('/' + theme.images.logo) }}" alt="logo" />
           <div>
             <div class="brand-title">{{ site.title }}</div>
-            <div class="brand-sub">{{ site.description }}</div>
+            <div class="brand-sub hide-mobile">{{ site.description }}</div>
           </div>
         </div>
         <nav class="nav">

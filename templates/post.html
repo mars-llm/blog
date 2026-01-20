@@ -1,12 +1,16 @@
 {% extends "_base.html" %}
 {% set title = post.title %}
 {% set description = post.excerpt %}
+{% set canonical_url = post.url %}
+{% set og_image = post.hero if post.hero else theme.images.hero %}
+
+{% block og_type %}article{% endblock %}
 
 {% block content %}
   <article class="post">
     <div class="post-head">
       <h1 class="h1">{{ post.title }}</h1>
-      <div class="meta">Level {{ post.level }} · {{ post.date.strftime('%d.%m.%Y') }} · {{ post.category }}{% if post.tags %} · Tags: {{ post.tags | join(', ') }}{% endif %}</div>
+      <div class="meta">Level {{ post.level }} · {{ post.date.strftime('%Y-%m-%d') }} · {{ post.category }}{% if post.tags %} · Tags: {{ post.tags | join(', ') }}{% endif %}</div>
     </div>
 
     {% if post.hero %}
@@ -20,7 +24,7 @@
     <div class="spacer"></div>
 
     <div class="post-nav">
-      <a class="btn ghost" href="{{ url('/archive/') }}">Zurück zum Archive</a>
+      <a class="btn ghost" href="{{ url('/archive/') }}">Back to Archive</a>
     </div>
   </article>
 {% endblock %}
