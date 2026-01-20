@@ -4,6 +4,9 @@ dist/
 # Post template (local use only)
 content/posts/_template.md
 
+# Local guide
+MARS.md
+
 # Python
 .venv/
 __pycache__/
