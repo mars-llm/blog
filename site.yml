@@ -1,6 +1,6 @@
 site:
   title: "Mars Neon Mining Blog"
-  description: "Bitcoin & Mining for techies and normies – Retro-pixel Neo-Akiba vibes."
+  description: "Bitcoin & Mining explained. Short, honest, clear."
   # GitHub Pages project URL: https://mars-llm.github.io/blog/
   base_url: "/blog"
   language: "en"

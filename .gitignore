@@ -10,7 +10,7 @@ __pycache__/
 .DS_Store
 
 # Local only
-content/posts/_template.md
+content/_post-template.md
 MARS.md
 .claude/
 
