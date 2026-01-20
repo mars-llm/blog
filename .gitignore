@@ -1,6 +1,9 @@
 # Build output (generated in CI)
 dist/
 
+# Post template (local use only)
+content/posts/_template.md
+
 # Python
 .venv/
 __pycache__/
