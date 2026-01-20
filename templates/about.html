@@ -1,35 +1,41 @@
 {% extends "_base.html" %}
 {% set title = "About" %}
-{% set description = "Über dieses Blog" %}
+{% set description = "About this blog" %}
 
 {% block content %}
   <h1 class="h1">About</h1>
 
   <div class="prose">
     <p>
-      Dieses Blog ist ein Retro-Pixel Logbook für Bitcoin & Mining.
-      Zielgruppe sind Techies, aber auch Normies, die verstehen wollen, was in der Mining-Welt wirklich passiert.
+      This blog is a retro-pixel logbook for Bitcoin & Mining.
+      Target audience: techies, but also normies who want to understand what's really happening in the mining world.
     </p>
 
-    <h2>Wie du Inhalte veröffentlichst</h2>
+    <h2>How to publish content</h2>
     <ul>
-      <li>Neue Markdown-Datei in <code>content/posts/</code> erstellen.</li>
-      <li>YAML Front Matter setzen (Titel, Datum, Tags, Level).</li>
-      <li>Push nach <code>main</code> → GitHub Actions baut und deployt nach Pages.</li>
+      <li>Create a new Markdown file in <code>content/posts/</code>.</li>
+      <li>Set YAML front matter (title, date, tags, level).</li>
+      <li>Push to <code>main</code> &rarr; GitHub Actions builds and deploys to Pages.</li>
     </ul>
 
-    <h2>Theme anpassen</h2>
+    <h2>Customize the theme</h2>
     <ul>
-      <li>Farben + Bildpfade: <code>site.yml</code></li>
+      <li>Colors + image paths: <code>site.yml</code></li>
       <li>CSS: <code>assets/css/main.css</code></li>
-      <li>Grafiken: <code>assets/img/</code></li>
+      <li>Graphics: <code>assets/img/</code></li>
     </ul>
 
-    <h2>Asset-Prompts (für Pixel-Neon-Akiba)</h2>
-    <p>Beispiele für deine lokale Bildgenerierung ("nano banana" oder ähnlich). Kein Text, keine Logos, keine Marken.</p>
+    <h2>Asset prompts (for pixel-neon-Akiba)</h2>
+    <p>Examples for local image generation ("nano banana" or similar). No text, no logos, no brands.</p>
     <pre><code>Pixel art, dystopian Akihabara alley at night, neon signs, rain reflections, cyberpunk, 16-bit vibe, no text, no logos, wide banner
 Pixel art icon set: bitcoin coin, ASIC chip, fan, lightning bolt, temperature gauge, 16x16, limited palette, transparent background
 Pixel tile pattern: neon circuit + concrete, seamless, 64x64, pixel art, limited palette, no text
 </code></pre>
+
+    <h2>Privacy</h2>
+    <p>
+      This site does not use cookies, analytics, or any form of tracking.
+      We do not collect user data because we don't need it.
+    </p>
   </div>
 {% endblock %}

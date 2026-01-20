@@ -7,17 +7,17 @@ level: "1-1"
 ---
 
 ## TL;DR
-Bitcoin Mining ist kein Zaubertrick. Es ist ein Wettbewerb um **Energieeffizienz**, **Uptime** und **Vertrauen** in Hardware und Firmware.
+Bitcoin Mining isn't magic. It's a competition for **energy efficiency**, **uptime**, and **trust** in hardware and firmware.
 
 ## Normie Mode
-- Hashes sind nur extrem viele schnelle Versuche, einen gültigen Blockheader zu finden.
-- Difficulty sorgt dafür, dass es im Schnitt einen Block in einem festen Rhythmus gibt.
-- Pools glätten Varianz. Du bekommst häufiger kleine Auszahlungen statt selten den großen Treffer.
+- Hashes are just extremely fast attempts to find a valid block header.
+- Difficulty ensures there's roughly one block at a fixed interval on average.
+- Pools smooth out variance. You get frequent small payouts instead of rare big hits.
 
 ## Tech Mode
-- Shares sind nur “Beweise”, dass du Arbeit geleistet hast, mit separater Share-Difficulty.
-- Effizienz ist nicht nur ASIC. VRM-Design, PSU-Qualität und Thermals entscheiden mit.
-- Closed-Source-Firmware ist ein Trust-Tradeoff. Du solltest wissen, wer Kontrolle hat.
+- Shares are just "proofs" that you did work, with a separate share difficulty.
+- Efficiency isn't just ASIC. VRM design, PSU quality, and thermals all matter.
+- Closed-source firmware is a trust tradeoff. You should know who has control.
 
 ## Next Level
-Im nächsten Post: **Open Source Firmware vs Closed Source Pools**. Wer kontrolliert deinen Miner wirklich.
+Next post: **Open Source Firmware vs Closed Source Pools**. Who really controls your miner.
