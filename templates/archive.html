@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+{% set title = "Archive" %}
+{% set description = "Alle Posts" %}
+
+{% block content %}
+  <h1 class="h1">Archive</h1>
+  <div class="meta">Alle Levels, alle Runs.</div>
+
+  <div class="list">
+    {% for post in posts %}
+      <a class="list-item" href="{{ url(post.url) }}">
+        <div class="list-title">{{ post.title }}</div>
+        <div class="list-meta">{{ post.date.strftime('%d.%m.%Y') }} · {{ post.category }} · Level {{ post.level }}</div>
+      </a>
+    {% endfor %}
+  </div>
+{% endblock %}

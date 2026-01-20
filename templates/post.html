@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+{% set title = post.title %}
+{% set description = post.excerpt %}
+
+{% block content %}
+  <article class="post">
+    <div class="post-head">
+      <h1 class="h1">{{ post.title }}</h1>
+      <div class="meta">Level {{ post.level }} · {{ post.date.strftime('%d.%m.%Y') }} · {{ post.category }}{% if post.tags %} · Tags: {{ post.tags | join(', ') }}{% endif %}</div>
+    </div>
+
+    {% if post.hero %}
+      <div class="post-hero" style="background-image: url('{{ url(post.hero) }}');"></div>
+    {% endif %}
+
+    <div class="prose">
+      {{ post.html | safe }}
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="post-nav">
+      <a class="btn ghost" href="{{ url('/archive/') }}">Zurück zum Archive</a>
+    </div>
+  </article>
+{% endblock %}

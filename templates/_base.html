@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ description }}" />
+
+  <link rel="icon" href="{{ url('/' + theme.images.favicon) }}" />
+  <link rel="stylesheet" href="{{ url('/assets/css/main.css') }}" />
+
+  <style>
+    :root{
+      --bg: {{ theme.palette.bg }};
+      --panel: {{ theme.palette.panel }};
+      --fg: {{ theme.palette.fg }};
+      --muted: {{ theme.palette.muted }};
+      --neon-pink: {{ theme.palette.neon_pink }};
+      --neon-cyan: {{ theme.palette.neon_cyan }};
+      --neon-yellow: {{ theme.palette.neon_yellow }};
+      --tile: url("{{ url('/' + theme.images.tile) }}");
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="frame header-frame">
+        <div class="brand">
+          <img class="logo" src="{{ url('/' + theme.images.logo) }}" alt="logo" />
+          <div>
+            <div class="brand-title">{{ site.title }}</div>
+            <div class="brand-sub">{{ site.description }}</div>
+          </div>
+        </div>
+        <nav class="nav">
+          {% for item in site.nav %}
+            <a href="{{ url(item.href) }}">{{ item.label }}</a>
+          {% endfor %}
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="frame content">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="tiny">© {{ now() }} · {{ site.title }} · Neo-Akiba Pixel Theme</div>
+    </div>
+  </footer>
+</body>
+</html>

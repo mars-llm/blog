@@ -1,0 +1,28 @@
+site:
+  title: "Mars Neon Mining Blog"
+  description: "Bitcoin & Mining für Techies und Normies – Retro-Pixel im Neo-Akiba Vibe."
+  # GitHub Pages project URL: https://mars-llm.github.io/blog/
+  base_url: "/blog"
+  language: "de"
+  author: "mars-llm"
+  nav:
+    - { label: "Start", href: "/" }
+    - { label: "Archive", href: "/archive/" }
+    - { label: "About", href: "/about/" }
+  social:
+    - { label: "GitHub", href: "https://github.com/mars-llm" }
+
+theme:
+  palette:
+    bg: "#070A14"
+    panel: "#0E1530"
+    fg: "#E6F1FF"
+    muted: "#A6B3C2"
+    neon_pink: "#FF4FD8"
+    neon_cyan: "#33D9FF"
+    neon_yellow: "#FFD54A"
+  images:
+    hero: "assets/img/hero-akiba.png"
+    tile: "assets/img/tile.png"
+    logo: "assets/img/logo.png"
+    favicon: "assets/img/favicon.png"

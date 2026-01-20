@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+{% set title = "Start" %}
+{% set description = site.description %}
+
+{% block content %}
+  <section class="hero" style="background-image: url('{{ url('/' + theme.images.hero) }}');">
+    <div class="hero-overlay">
+      <div class="hero-kicker">Dystopia District</div>
+      <h1 class="hero-title">Mining Notes aus Neo-Akiba</h1>
+      <div class="hero-sub">Bitcoin & Mining für Techies und Normies. Kurz, ehrlich, nachvollziehbar.</div>
+      <div class="hero-cta">
+        <a class="btn" href="{{ url('/archive/') }}">Archive öffnen</a>
+        <a class="btn ghost" href="{{ url('/about/') }}">Was ist das?</a>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="h2">Neue Posts</h2>
+
+  <div class="cards">
+    {% for post in posts %}
+      <a class="card" href="{{ url(post.url) }}">
+        <div class="card-top">
+          <div class="card-title">{{ post.title }}</div>
+          <div class="chip">Level {{ post.level }}</div>
+        </div>
+        <div class="card-meta">{{ post.date.strftime('%d.%m.%Y') }} · {{ post.category }}</div>
+        <div class="card-excerpt">{{ post.excerpt }}</div>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="spacer"></div>
+
+  <div class="callout">
+    <div class="callout-title">Design-Prinzip</div>
+    <div class="callout-body">
+      Keine geklauten Sprites, keine Marken-Assets. Nur generische Neon-Dystopie, Pixel-UI, eigene Grafiken.
+      Bilder tauscht du zentral in <code>site.yml</code> und <code>assets/img/</code>.
+    </div>
+  </div>
+{% endblock %}

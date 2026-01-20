@@ -1,0 +1,35 @@
+{% extends "_base.html" %}
+{% set title = "About" %}
+{% set description = "Über dieses Blog" %}
+
+{% block content %}
+  <h1 class="h1">About</h1>
+
+  <div class="prose">
+    <p>
+      Dieses Blog ist ein Retro-Pixel Logbook für Bitcoin & Mining.
+      Zielgruppe sind Techies, aber auch Normies, die verstehen wollen, was in der Mining-Welt wirklich passiert.
+    </p>
+
+    <h2>Wie du Inhalte veröffentlichst</h2>
+    <ul>
+      <li>Neue Markdown-Datei in <code>content/posts/</code> erstellen.</li>
+      <li>YAML Front Matter setzen (Titel, Datum, Tags, Level).</li>
+      <li>Push nach <code>main</code> → GitHub Actions baut und deployt nach Pages.</li>
+    </ul>
+
+    <h2>Theme anpassen</h2>
+    <ul>
+      <li>Farben + Bildpfade: <code>site.yml</code></li>
+      <li>CSS: <code>assets/css/main.css</code></li>
+      <li>Grafiken: <code>assets/img/</code></li>
+    </ul>
+
+    <h2>Asset-Prompts (für Pixel-Neon-Akiba)</h2>
+    <p>Beispiele für deine lokale Bildgenerierung ("nano banana" oder ähnlich). Kein Text, keine Logos, keine Marken.</p>
+    <pre><code>Pixel art, dystopian Akihabara alley at night, neon signs, rain reflections, cyberpunk, 16-bit vibe, no text, no logos, wide banner
+Pixel art icon set: bitcoin coin, ASIC chip, fan, lightning bolt, temperature gauge, 16x16, limited palette, transparent background
+Pixel tile pattern: neon circuit + concrete, seamless, 64x64, pixel art, limited palette, no text
+</code></pre>
+  </div>
+{% endblock %}

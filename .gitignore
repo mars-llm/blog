@@ -1,0 +1,10 @@
+# Build output (generated in CI)
+dist/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
