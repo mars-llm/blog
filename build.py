@@ -229,7 +229,16 @@ def render_site(cfg: Dict[str, Any], posts: List[Post]) -> None:
 
 
 def main() -> None:
+    import sys
+    local_mode = "--local" in sys.argv
+
     cfg = load_config()
+
+    # Override base_url for local testing
+    if local_mode:
+        cfg["site"]["base_url"] = ""
+        print("Building in LOCAL mode (base_url='')")
+
     ensure_dist()
     copy_assets()
     posts = build_posts(cfg)
