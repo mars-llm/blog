@@ -90,6 +90,18 @@ def load_config() -> Dict[str, Any]:
     return cfg
 
 
+def load_stats() -> Dict[str, Any]:
+    """Load network stats from stats.json if it exists."""
+    stats_file = ROOT / "stats.json"
+    if stats_file.exists():
+        try:
+            import json
+            return json.loads(stats_file.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return {"bitcoin": {}, "lightning": {}}
+
+
 def ensure_dist() -> None:
     if DIST.exists():
         shutil.rmtree(DIST)
@@ -180,10 +192,12 @@ def render_site(cfg: Dict[str, Any], posts: List[Post]) -> None:
     env.globals["url"] = lambda p: make_url(base_url, p)
     env.globals["now"] = lambda: dt.datetime.utcnow().strftime("%Y")
 
+    stats = load_stats()
     ctx_base = {
         "site": cfg["site"],
         "theme": cfg["theme"],
         "base_url": base_url,
+        "stats": stats,
     }
 
     # Index

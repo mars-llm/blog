@@ -15,6 +15,83 @@
     </div>
   </section>
 
+  {% if stats.bitcoin or stats.lightning %}
+  <section class="stats-section">
+    <h2 class="h2">Network Stats</h2>
+    <div class="stats-grid">
+      {% if stats.bitcoin %}
+      <div class="stats-card">
+        <div class="stats-card-title">Bitcoin</div>
+        <div class="stats-items">
+          {% if stats.bitcoin.block_height %}
+          <div class="stat-item">
+            <span class="stat-label">Block Height</span>
+            <span class="stat-value">{{ stats.bitcoin.block_height_fmt }}</span>
+          </div>
+          {% endif %}
+          {% if stats.bitcoin.hashrate_fmt %}
+          <div class="stat-item">
+            <span class="stat-label">Hashrate</span>
+            <span class="stat-value">{{ stats.bitcoin.hashrate_fmt }}</span>
+          </div>
+          {% endif %}
+          {% if stats.bitcoin.difficulty_fmt %}
+          <div class="stat-item">
+            <span class="stat-label">Difficulty</span>
+            <span class="stat-value">{{ stats.bitcoin.difficulty_fmt }}</span>
+          </div>
+          {% endif %}
+          {% if stats.bitcoin.mempool_tx_count_fmt %}
+          <div class="stat-item">
+            <span class="stat-label">Mempool TXs</span>
+            <span class="stat-value">{{ stats.bitcoin.mempool_tx_count_fmt }}</span>
+          </div>
+          {% endif %}
+          {% if stats.bitcoin.fee_medium is defined %}
+          <div class="stat-item">
+            <span class="stat-label">Fee (med)</span>
+            <span class="stat-value">{{ stats.bitcoin.fee_medium }} sat/vB</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% if stats.lightning %}
+      <div class="stats-card">
+        <div class="stats-card-title">Lightning</div>
+        <div class="stats-items">
+          {% if stats.lightning.node_count_fmt %}
+          <div class="stat-item">
+            <span class="stat-label">Nodes</span>
+            <span class="stat-value">{{ stats.lightning.node_count_fmt }}</span>
+          </div>
+          {% endif %}
+          {% if stats.lightning.channel_count_fmt %}
+          <div class="stat-item">
+            <span class="stat-label">Channels</span>
+            <span class="stat-value">{{ stats.lightning.channel_count_fmt }}</span>
+          </div>
+          {% endif %}
+          {% if stats.lightning.capacity_btc_fmt %}
+          <div class="stat-item">
+            <span class="stat-label">Capacity</span>
+            <span class="stat-value">{{ stats.lightning.capacity_btc_fmt }} BTC</span>
+          </div>
+          {% endif %}
+          {% if stats.lightning.avg_channel_sat_fmt %}
+          <div class="stat-item">
+            <span class="stat-label">Avg Channel</span>
+            <span class="stat-value">{{ stats.lightning.avg_channel_sat_fmt }} sat</span>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class="stats-note">Updated daily via mempool.space API. No tracking, no external requests.</div>
+  </section>
+  {% endif %}
+
   <h2 class="h2">Latest Posts</h2>
 
   <div class="cards">
@@ -28,15 +105,5 @@
         <div class="card-excerpt">{{ post.excerpt }}</div>
       </a>
     {% endfor %}
-  </div>
-
-  <div class="spacer"></div>
-
-  <div class="callout">
-    <div class="callout-title">Design Note</div>
-    <div class="callout-body">
-      No stolen sprites, no brand assets. Only custom pixel graphics.
-      Swap images in <code>site.yml</code> and <code>assets/img/</code>.
-    </div>
   </div>
 {% endblock %}
