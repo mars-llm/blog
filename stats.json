@@ -1,26 +1,26 @@
 {
   "bitcoin": {
-    "block_height": 934948,
+    "block_height": 935085,
     "block_height_fmt": "935K",
-    "hashrate_eh": 883.8,
-    "hashrate_fmt": "883.8 EH/s",
+    "hashrate_eh": 905.2,
+    "hashrate_fmt": "905.2 EH/s",
     "difficulty": 141668107417558.2,
     "difficulty_fmt": "141.7T",
-    "mempool_tx_count": 25719,
-    "mempool_tx_count_fmt": "26K",
-    "mempool_size_mb": 49.0,
-    "fee_fast": 2,
+    "mempool_tx_count": 23172,
+    "mempool_tx_count_fmt": "23K",
+    "mempool_size_mb": 42.0,
+    "fee_fast": 4,
     "fee_medium": 1,
     "fee_slow": 1
   },
   "lightning": {
-    "node_count": 17334,
+    "node_count": 17320,
     "node_count_fmt": "17K",
-    "channel_count": 41193,
+    "channel_count": 41038,
     "channel_count_fmt": "41K",
-    "capacity_btc": 5185.0,
+    "capacity_btc": 5171.0,
     "capacity_btc_fmt": "5K",
-    "avg_channel_sat": 12586598,
+    "avg_channel_sat": 12599839,
     "avg_channel_sat_fmt": "13M"
   }
 }
