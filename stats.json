@@ -1,15 +1,15 @@
 {
   "bitcoin": {
-    "block_height": 951235,
+    "block_height": 951397,
     "block_height_fmt": "951K",
-    "hashrate_eh": 988.9,
-    "hashrate_fmt": "988.9 EH/s",
+    "hashrate_eh": 1016.2,
+    "hashrate_fmt": "1016.2 EH/s",
     "difficulty": 136607070854775.1,
     "difficulty_fmt": "136.6T",
-    "mempool_tx_count": 120057,
-    "mempool_tx_count_fmt": "120K",
-    "mempool_size_mb": 44.6,
-    "fee_fast": 2,
+    "mempool_tx_count": 104707,
+    "mempool_tx_count_fmt": "105K",
+    "mempool_size_mb": 42.8,
+    "fee_fast": 1,
     "fee_medium": 1,
     "fee_slow": 1
   },
